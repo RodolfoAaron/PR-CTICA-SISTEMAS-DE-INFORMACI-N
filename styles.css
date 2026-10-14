@@ -9,8 +9,10 @@ html, body {
   background: #000;
   overflow: hidden;
   font-family: system-ui, -apple-system, sans-serif;
+  color: #fff;
 }
 
+/* ===== FEED ===== */
 .feed {
   height: 100vh;
   overflow-y: scroll;
@@ -29,6 +31,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .slide img {
@@ -37,6 +40,17 @@ html, body {
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.caption {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 80px;
+  color: #fff;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  pointer-events: none;
 }
 
 .message {
@@ -51,3 +65,129 @@ html, body {
 .message.error {
   color: #f87171;
 }
+
+/* ===== BOTÓN SUBIR ===== */
+.upload-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+
+.upload-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 400px;
+  color: #fff;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #0a0a0a;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.file-label {
+  display: inline-block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+.btn-secondary {
+  background: #333;
+  color: #fff;
+}
+
+.status {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 20px;
+}
+
+.status.error { color: #f87171; }
+.status.success { color: #4ade80; }
