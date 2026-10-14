@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Botón flotante para subir -->
+  <button id="uploadBtn" class="upload-btn" aria-label="Subir foto">+</button>
+
+  <!-- Modal de subida (oculto por defecto) -->
+  <div id="uploadModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Subir foto</h2>
+      <form id="uploadForm">
+        <label for="fileInput" class="file-label">Elegir imagen</label>
+        <input type="file" id="fileInput" accept="image/*" required />
+
+        <label for="captionInput">Descripción (opcional)</label>
+        <input type="text" id="captionInput" placeholder="Escribe algo..." maxlength="200" />
+
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary">Subir</button>
+        </div>
+        <p id="uploadStatus" class="status"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Feed -->
   <div id="feed" class="feed">
     <div class="message">Cargando...</div>
   </div>
