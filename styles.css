@@ -108,14 +108,16 @@ html, body {
 .modal-content {
   background: #1a1a1a;
   border-radius: 16px;
-  padding: 28px;
+  padding: 24px;
   width: 100%;
   max-width: 400px;
   color: #fff;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .modal-content h2 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-size: 1.3rem;
 }
 
@@ -146,6 +148,35 @@ html, body {
   color: #aaa;
 }
 
+/* ===== CÁMARA ===== */
+.camera-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#camera, #preview {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+  max-height: 260px;
+  object-fit: cover;
+}
+
+#snapshot {
+  display: none;
+}
+
+.camera-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== BOTONES ===== */
 .modal-actions {
   display: flex;
   gap: 10px;
