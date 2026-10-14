@@ -2,7 +2,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 // ⚠️ Reemplaza con tu anon key real (Settings → API → anon public)
 const SUPABASE_URL = 'https://cqhqjwlwkxbpvudgeyhe.supabase.co';
-const SUPABASE_ANON_KEY = 'AQUI_PEGA_TU_ANON_KEY';
+const SUPABASE_ANON_KEY = 'sb_publishable_ypNbxNpZxpvfB5Po19s0DA_pIFzsK6D';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const feed = document.getElementById('feed');
